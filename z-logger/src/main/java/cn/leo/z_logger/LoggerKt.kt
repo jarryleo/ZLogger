@@ -5,42 +5,42 @@ package cn.leo.z_logger
  * @date : 2020-02-11
  */
 
-fun String.toLogD(tag: String = Logger.TAG) {
-    Logger.d(tag, this)
+fun CharSequence.toLogD(tag: String = Logger.TAG) {
+    Logger.d(this, tag)
 }
 
-fun String.toLogI(tag: String = Logger.TAG) {
-    Logger.i(tag, this)
+fun CharSequence.toLogI(tag: String = Logger.TAG) {
+    Logger.i(this, tag)
 }
 
-fun String.toLogE(tag: String = Logger.TAG) {
-    Logger.e(tag, this)
+fun CharSequence.toLogE(tag: String = Logger.TAG) {
+    Logger.e(this, tag)
 }
 
-fun String.toLogW(tag: String = Logger.TAG) {
-    Logger.w(tag, this)
+fun CharSequence.toLogW(tag: String = Logger.TAG) {
+    Logger.w(this, tag)
 }
 
-fun String.toLogV(tag: String = Logger.TAG) {
-    Logger.v(tag, this)
+fun CharSequence.toLogV(tag: String = Logger.TAG) {
+    Logger.v(this, tag)
 }
 
-fun Any.logE(log: String, tag: String = Logger.TAG) {
-    Logger.e(tag, log)
+fun Any.logE(log: CharSequence, tag: String = Logger.TAG) {
+    Logger.e(log, tag)
 }
 
-fun Any.logW(log: String, tag: String = Logger.TAG) {
-    Logger.w(tag, log)
+fun Any.logW(log: CharSequence, tag: String = Logger.TAG) {
+    Logger.w(log, tag)
 }
 
-fun Any.logD(log: String, tag: String = Logger.TAG) {
-    Logger.d(tag, log)
+fun Any.logD(log: CharSequence, tag: String = Logger.TAG) {
+    Logger.d(log, tag)
 }
 
-fun Any.logI(log: String, tag: String = Logger.TAG) {
-    Logger.i(tag, log)
+fun Any.logI(log: CharSequence, tag: String = Logger.TAG) {
+    Logger.i(log, tag)
 }
 
-fun Any.logV(log: String, tag: String = Logger.TAG) {
-    Logger.v(tag, log)
+fun Any.logV(log: CharSequence, tag: String = Logger.TAG) {
+    Logger.v(log, tag)
 }

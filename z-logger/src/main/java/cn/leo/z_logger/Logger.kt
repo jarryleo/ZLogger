@@ -12,46 +12,50 @@ object Logger {
 
     var level: LoggerLevel = LoggerLevel.PRINT
 
-    fun p(msg: String, tag: String = TAG) {
+    fun p(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.PRINT)
     }
 
-    fun v(msg: String, tag: String = TAG) {
+    fun v(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.VERBOSE)
     }
 
-    fun d(msg: String, tag: String = TAG) {
+    fun d(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.DEBUG)
     }
 
-    fun i(msg: String, tag: String = TAG) {
+    fun i(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.INFO)
     }
 
-    fun w(msg: String, tag: String = TAG) {
+    fun w(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.WARN)
     }
 
-    fun e(msg: String, tag: String = TAG) {
+    fun e(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.ERROR)
     }
 
-    fun a(msg: String, tag: String = TAG) {
+    fun a(msg: CharSequence?, tag: String = TAG) {
         printLog(tag, msg, LoggerLevel.ASSERT)
     }
 
 
-    private fun printLog(msg: String, tag: String = TAG, loggerLevel: LoggerLevel) {
+    private fun printLog(tag: String = TAG, msg: CharSequence?, loggerLevel: LoggerLevel) {
         if (!isDebug()) {
+            return
+        }
+        if (msg == null) {
             return
         }
         if (loggerLevel.level < level.level) {
             return
         }
-        val msgStr = if (msg.isJson()) {
-            " \n${msg.toJsonFormat()}"
+        val str = msg.toString()
+        val msgStr = if (str.isJson()) {
+            " \n${str.toJsonFormat()}"
         } else {
-            msg
+            str
         }
         when (loggerLevel) {
             LoggerLevel.PRINT -> println(msgStr)
