@@ -1,0 +1,2 @@
+include ':app', ':z-logger'
+rootProject.name='ZLogger'

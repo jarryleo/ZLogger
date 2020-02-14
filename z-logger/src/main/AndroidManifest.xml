@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.leo.z_logger">
+    <!-- 存储 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application>
+        <activity
+            android:label="ZLogger Crash Report"
+            android:name=".ZLoggerWebView"
+            android:process=":ZLogger" />
+
+        <provider
+            android:name=".ZLoggerProvider"
+            android:authorities="${applicationId}.ZLoggerProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/z_logger_file_provider" />
+        </provider>
+    </application>
+
+</manifest>
