@@ -12,9 +12,8 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     compileOnly 'androidx.appcompat:appcompat:1.1.0'
     compileOnly 'androidx.core:core-ktx:1.2.0'
-    compileOnly 'androidx.viewpager2:viewpager2:1.0.0'
-    debugImplementation 'com.alibaba:fastjson:1.2.62'
 }
