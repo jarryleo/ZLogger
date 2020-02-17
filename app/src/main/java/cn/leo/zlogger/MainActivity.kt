@@ -18,14 +18,15 @@ class MainActivity : AppCompatActivity(), PermissionUtil.Result {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         ).execute(this)
 
-        val json = "{\"approvalStatus\":1,\"commentCount\":2}"
+        val json =
+            "{\"code\":0,\"data\":[{\"count\":0,\"createDate\":1581925048554,\"esId\":\"0\",\"id\":1,\"modifyDate\":1581925048554,\"name\":\"系统消息\"},{\"count\":0,\"createDate\":1581925048566,\"esId\":\"0\",\"id\":2,\"modifyDate\":1581925048566,\"name\":\"评论回复\"}],\"msg\":\"成功\",\"times\":1581925048569}"
         Logger.d("123$json")
 
         tvTest.setOnClickListener {
             throw RuntimeException("测试崩溃！")
         }
 
-        throw RuntimeException("测试崩溃！")
+        //throw RuntimeException("测试崩溃！")
     }
 
     override fun onSuccess() {

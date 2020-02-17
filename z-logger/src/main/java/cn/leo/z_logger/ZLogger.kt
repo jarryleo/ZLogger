@@ -82,6 +82,8 @@ internal object ZLogger {
             return str
         }
         //格式化其中json
-        return str.substring(0, left) + "\n" + maybeJson + "\n" + str.substring(right + 1)
+        return str.substring(0, left) + "\n" +
+                maybeJson.toJsonFormat() + "\n" +
+                str.substring(right + 1)
     }
 }
