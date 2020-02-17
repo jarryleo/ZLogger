@@ -17,6 +17,12 @@ Add it in your root build.gradle at the end of repositories:
 #### Step 2. Add the dependency
 ```
 	dependencies {
-	        implementation 'com.github.jarryleo:ZLogger:v1.0.1'
+	        debugImplementation 'com.github.jarryleo:ZLogger:v1.0.6'
+	        releaseImplementation 'com.github.jarryleo:ZLogger-no-op:v1.0.0'
 	}
   ```
+
+releaseImplementation  为发行库，里面都是空实现     
+debugImplementation 为调试库，日志只需要调试时候使用     
+如果你有别除了 debug和release之外的环境，比方说 dev      
+请使用 devImplementation 其它环境类似     
