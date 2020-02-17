@@ -7,8 +7,8 @@
 
     <application>
         <activity
-            android:label="ZLogger Crash Report"
             android:name=".ZLoggerWebView"
+            android:label="Crash Report"
             android:process=":ZLogger" />
 
         <provider

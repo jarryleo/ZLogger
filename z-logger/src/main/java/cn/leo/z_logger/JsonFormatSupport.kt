@@ -12,14 +12,17 @@ import com.alibaba.fastjson.serializer.SerializerFeature
 /**
  * 判断字符串是否是json
  */
-fun String.isJson(): Boolean {
-    return JSONObject.isValid(this)
+internal fun String.isJson(): Boolean {
+    return JSONObject.isValidObject(this)
 }
 
 /**
  * 格式化json字符串
  */
-fun String.toJsonFormat(): String {
+internal fun String.toJsonFormat(): String {
+    if (!isJson()){
+        return this
+    }
     return JSON.toJSONString(
         JSONObject.parseObject(this),
         SerializerFeature.PrettyFormat,

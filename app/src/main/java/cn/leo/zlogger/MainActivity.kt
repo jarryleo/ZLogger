@@ -3,6 +3,7 @@ package cn.leo.zlogger
 import android.Manifest
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import cn.leo.z_logger.Logger
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), PermissionUtil.Result {
@@ -17,6 +18,8 @@ class MainActivity : AppCompatActivity(), PermissionUtil.Result {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
         ).execute(this)
 
+        val json = "{\"approvalStatus\":1,\"commentCount\":2}"
+        Logger.d("123$json")
 
         tvTest.setOnClickListener {
             throw RuntimeException("测试崩溃！")

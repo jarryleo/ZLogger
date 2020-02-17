@@ -14,7 +14,7 @@ import java.io.PrintStream
  * @date : 2020-02-12
  */
 
-class CrashLog(
+internal class CrashLog(
     private val context: Context,
     private val defaultUncaughtExceptionHandler: Thread.UncaughtExceptionHandler?
 ) :
@@ -40,7 +40,8 @@ class CrashLog(
         val msg = getThrowableMsg(e)
         val html = createHtml(msg)
         val file = writeCrashLogToFile(html)
-        "展示崩溃信息".toLogE()
+        "app崩溃，崩溃信息如下：".toLogE()
+        e.printStackTrace()
         openWebView(file)
         //交给原系统处理
         defaultUncaughtExceptionHandler?.uncaughtException(t, e)
@@ -62,6 +63,7 @@ class CrashLog(
         for (i in split.indices) {
             var s1 = split[i]
             if (!s1.contains("android.")
+                && !s1.contains("androidx.")
                 && !s1.contains("java.")
                 && s1.contains("at")
                 && i > 0
