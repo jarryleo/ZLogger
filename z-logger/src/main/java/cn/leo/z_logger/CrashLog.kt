@@ -40,8 +40,7 @@ internal class CrashLog(
         val msg = getThrowableMsg(e)
         val html = createHtml(msg)
         val file = writeCrashLogToFile(html)
-        "app崩溃，崩溃信息如下：".toLogE()
-        e.printStackTrace()
+        "app发生crash，请检查日志".toLogE()
         openWebView(file)
         //交给原系统处理
         defaultUncaughtExceptionHandler?.uncaughtException(t, e)
