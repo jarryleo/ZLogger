@@ -8,9 +8,9 @@ import android.content.pm.ApplicationInfo
  * @date : 2020-02-11
  */
 
-internal fun isDebug(context: Context): Boolean {
+internal fun isDebug(context: Context?): Boolean {
     return try {
-        context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
+        context?.applicationInfo?.flags ?: 0 and ApplicationInfo.FLAG_DEBUGGABLE != 0
     } catch (e: Exception) {
         false
     }

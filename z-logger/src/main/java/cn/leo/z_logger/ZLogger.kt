@@ -41,7 +41,7 @@ internal object ZLogger {
 
 
     private fun printLog(tag: String = Logger.TAG, msg: CharSequence?, loggerLevel: LoggerLevel) {
-        if (!isDebug()) {
+        if (!isDebug(ZLoggerProvider.context)) {
             return
         }
         if (msg == null) {
