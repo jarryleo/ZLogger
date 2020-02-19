@@ -20,13 +20,17 @@ internal fun String.isJson(): Boolean {
  * 格式化json字符串
  */
 internal fun String.toJsonFormat(): String {
-    if (!isJson()){
+    if (!isJson() || this.isEmpty()) {
         return this
     }
-    return JSON.toJSONString(
-        JSONObject.parseObject(this),
-        SerializerFeature.PrettyFormat,
-        SerializerFeature.WriteMapNullValue,
-        SerializerFeature.WriteDateUseDateFormat
-    )
+    return try {
+        JSON.toJSONString(
+            JSONObject.parseObject(this),
+            SerializerFeature.PrettyFormat,
+            SerializerFeature.WriteMapNullValue,
+            SerializerFeature.WriteDateUseDateFormat
+        )
+    } catch (e: Exception) {
+        this
+    }
 }
