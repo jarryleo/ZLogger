@@ -115,7 +115,7 @@ internal class CrashLog(
     private fun openWebView(file: File) {
         val uri = file.getUri()
         val intent = Intent(context, ZLoggerWebView::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_TASK_ON_HOME or Intent.FLAG_ACTIVITY_NEW_TASK
         intent.data = uri
         context.startActivity(intent)
     }
