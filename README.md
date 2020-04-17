@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 #### Step 2. Add the dependency
 ```
 	dependencies {
-	        debugImplementation 'com.github.jarryleo:ZLogger:v1.0.8'
+	        debugImplementation 'com.github.jarryleo:ZLogger:v1.0.9'
 	        releaseImplementation 'com.github.jarryleo:ZLogger-no-op:v1.0.0'
 	}
   ```
