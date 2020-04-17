@@ -75,6 +75,13 @@ internal object ZLogger {
         if (right < 0) {
             return str
         }
+        //边界判断
+        if (right < left) {
+            return str
+        }
+        if (right >= str.length){
+            return str
+        }
         //有左右大括号，提取大括号内容
         val maybeJson = str.subSequence(left, right + 1).toString()
         val json = maybeJson.isJson()
