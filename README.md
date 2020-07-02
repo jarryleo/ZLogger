@@ -13,14 +13,19 @@ Add it in your root build.gradle at the end of repositories:
 			maven { url 'https://jitpack.io' }
 		}
 	}
- ``` 
+```
 #### Step 2. Add the dependency
 ```
 	dependencies {
 	        debugImplementation 'com.github.jarryleo:ZLogger:v1.0.9'
 	        releaseImplementation 'com.github.jarryleo:ZLogger-no-op:v1.0.0'
 	}
-  ```
+
+
+    //上面是androidX版本
+    //support 版本是：
+    debugImplementation 'com.github.jarryleo:ZLogger:v1.1.0'
+```
 
 releaseImplementation  为发行库，里面都是空实现     
 debugImplementation 为调试库，日志只需要调试时候使用     
