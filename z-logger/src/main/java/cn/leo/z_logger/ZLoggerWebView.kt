@@ -1,10 +1,10 @@
 package cn.leo.z_logger
 
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebViewClient
-import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_zlogger_web_view.*
 
 internal class ZLoggerWebView : AppCompatActivity() {
